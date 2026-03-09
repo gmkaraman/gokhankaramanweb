@@ -9,7 +9,9 @@
         <div class="md:flex">
             {{ with $featured.Params.featured_image }}
             <div class="md:w-2/3">
-                <img src="{{ . }}" alt="{{ $featured.Title }}" class="w-full h-96 object-cover">
+                <a href="{{ $featured.RelPermalink }}">
+                    <img src="{{ . }}" alt="{{ $featured.Title }}" class="w-full h-96 object-cover">
+                </a>
             </div>
             {{ end }}
 
@@ -28,30 +30,33 @@
 
                 <div class="flex items-center text-sm text-gray-600 mb-4">
                     {{ with $featured.Params.author }}
-                    <span class="mr-4">By <a href="/authors/{{ . | lower | replace "." "" | urlize }}/" class="text-blue-600 hover:text-blue-800">{{ . }}</a></span>
+                    <span class="mr-4">By <span class="text-blue-600">{{ . }}</span></span>
                     {{ end }}
-                    <span>{{ $featured.Date.Format "January 2, 2006" }}</span>
+                    <span>{{ $featured.Date.Format "2 January 2006" }}</span>
                 </div>
 
                 <p class="text-gray-700 mb-4">{{ $featured.Description | default ($featured.Summary | truncate 200) }}</p>
-                <a href="{{ $featured.RelPermalink }}" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">Read More</a>
+                <a href="{{ $featured.RelPermalink }}" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">Haberi Oku</a>
             </div>
         </div>
     </article>
     {{ end }}
 
     <div class="mb-12">
-        <h2 class="text-3xl font-bold mb-8">Recent Articles</h2>
+        <h2 class="text-3xl font-bold mb-8">Son Haberler</h2>
         <div class="grid gap-8 md:grid-cols-3">
             {{ range first 6 (after 1 $articles) }}
+            {{ $article := . }}
             <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                {{ with .Params.featured_image }}
-                <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-48 object-cover">
+                {{ with $article.Params.featured_image }}
+                <a href="{{ $article.RelPermalink }}">
+                    <img src="{{ . }}" alt="{{ $article.Title }}" class="w-full h-48 object-cover">
+                </a>
                 {{ end }}
 
                 <div class="p-6">
                     <div class="flex flex-wrap gap-2 mb-3">
-                        {{ with .Params.categories }}
+                        {{ with $article.Params.categories }}
                             {{ range first 1 . }}
                                 <a href="/categories/{{ . | urlize }}/" class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">{{ . }}</a>
                             {{ end }}
@@ -59,17 +64,17 @@
                     </div>
 
                     <h3 class="text-xl font-bold mb-2">
-                        <a href="{{ .RelPermalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a>
+                        <a href="{{ $article.RelPermalink }}" class="text-gray-900 hover:text-blue-600">{{ $article.Title }}</a>
                     </h3>
 
                     <div class="flex items-center text-sm text-gray-600 mb-3">
-                        {{ with .Params.author }}
-                        <span class="mr-4">By <a href="/authors/{{ . | lower | replace "." "" | urlize }}/" class="text-blue-600 hover:text-blue-800">{{ . }}</a></span>
+                        {{ with $article.Params.author }}
+                        <span class="mr-4">By <span class="text-blue-600">{{ . }}</span></span>
                         {{ end }}
-                        <span>{{ .Date.Format "Jan 2" }}</span>
+                        <span>{{ $article.Date.Format "2 Jan" }}</span>
                     </div>
 
-                    <p class="text-gray-700 text-sm mb-4">{{ .Description | default (.Summary | truncate 120) }}</p>
+                    <p class="text-gray-700 text-sm mb-4">{{ $article.Description | default ($article.Summary | truncate 120) }}</p>
                 </div>
             </article>
             {{ end }}
@@ -77,125 +82,20 @@
     </div>
 
     <div class="mb-12">
-        <h2 class="text-3xl font-bold mb-6">Browse by Category</h2>
+        <h2 class="text-3xl font-bold mb-6">Kategoriler</h2>
         <div id="categories-container" class="grid gap-4 md:grid-cols-4 grid-rows-2">
             {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
             <a href="/categories/{{ $name | urlize }}/" class="category-item bg-white p-4 rounded-lg shadow hover:shadow-md transition">
                 <h3 class="font-semibold text-lg text-gray-900">{{ $name }}</h3>
-                <p class="text-gray-600 text-sm mt-1">{{ len $taxonomy }} {{ if eq (len $taxonomy) 1 }}article{{ else }}articles{{ end }}</p>
+                <p class="text-gray-600 text-sm mt-1">{{ len $taxonomy }} haber</p>
             </a>
-            {{ end }}
-        </div>
-
-        <div class="flex justify-center items-center gap-4 mt-6">
-            <button id="prev-categories" class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                ← Previous
-            </button>
-            <span id="category-page-info" class="text-gray-600"></span>
-            <button id="next-categories" class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                Next →
-            </button>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoriesPerPage = 8;
-            const categoryItems = document.querySelectorAll('.category-item');
-            const totalPages = Math.ceil(categoryItems.length / categoriesPerPage);
-            let currentPage = 1;
-
-            const prevButton = document.getElementById('prev-categories');
-            const nextButton = document.getElementById('next-categories');
-            const pageInfo = document.getElementById('category-page-info');
-
-            function updateCategories() {
-                categoryItems.forEach((item, index) => {
-                    const startIndex = (currentPage - 1) * categoriesPerPage;
-                    const endIndex = startIndex + categoriesPerPage;
-                    if (index >= startIndex && index < endIndex) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-
-                prevButton.disabled = currentPage === 1;
-                nextButton.disabled = currentPage === totalPages;
-                pageInfo.textContent = totalPages > 0 ? `Page ${currentPage} of ${totalPages}` : '';
-            }
-
-            if (prevButton && nextButton && pageInfo) {
-                prevButton.addEventListener('click', () => {
-                    if (currentPage > 1) {
-                        currentPage--;
-                        updateCategories();
-                    }
-                });
-
-                nextButton.addEventListener('click', () => {
-                    if (currentPage < totalPages) {
-                        currentPage++;
-                        updateCategories();
-                    }
-                });
-
-                updateCategories();
-            }
-        });
-    </script>
-
-    <div class="mb-12">
-        <h2 class="text-3xl font-bold mb-6">Our Authors</h2>
-        <div class="grid gap-6 md:grid-cols-3">
-            {{ $authors := slice }}
-            {{ range $articles }}
-                {{ with .Params.author }}
-                    {{ $authors = $authors | append . }}
-                {{ end }}
-            {{ end }}
-
-            {{ range ($authors | uniq) }}
-                {{ $author := . }}
-                {{ $authorPosts := where $articles "Params.author" $author }}
-                {{ $authorPage := $.Site.GetPage (printf "/authors/%s" (replace (lower $author) "." "" | urlize)) }}
-
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <h3 class="text-xl font-semibold">
-                                    <a href="/authors/{{ $author | lower | replace "." "" | urlize }}/" class="text-blue-600 hover:text-blue-800">{{ $author }}</a>
-                                </h3>
-
-                                {{ with $authorPage }}
-                                    {{ with .Params.role }}
-                                    <p class="text-sm text-gray-600 mt-1">{{ . }}</p>
-                                    {{ end }}
-                                {{ end }}
-                            </div>
-                            <span class="text-gray-600">{{ len $authorPosts }} {{ if eq (len $authorPosts) 1 }}article{{ else }}articles{{ end }}</span>
-                        </div>
-
-                        <div class="mb-4">
-                            <h4 class="text-sm font-medium text-gray-600 mb-2">Recent Articles:</h4>
-                            <ul class="text-sm space-y-1">
-                                {{ range first 2 $authorPosts }}
-                                <li><a href="{{ .RelPermalink }}" class="text-blue-600 hover:text-blue-800">{{ .Title }}</a></li>
-                                {{ end }}
-                            </ul>
-                        </div>
-
-                        <a href="/authors/{{ $author | lower | replace "." "" | urlize }}/" class="text-blue-600 hover:text-blue-800 text-sm font-medium">View full profile →</a>
-                    </div>
-                </div>
             {{ end }}
         </div>
     </div>
 
     <div class="text-center">
         <a href="/articles" class="inline-block bg-gray-800 text-white px-8 py-3 rounded-md hover:bg-gray-700">
-            View All Articles
+            Tüm Haberleri Gör
         </a>
     </div>
 </div>
