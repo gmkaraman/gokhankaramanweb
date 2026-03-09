@@ -1,28 +1,29 @@
 ---
-
-title: "Hakkımda"
-
-layout: "page"
-
+title: "Hakkımızda"
+date: "2026-03-09"
+draft: false
 ---
 
+#
 
+Haber-G, dünya genelindeki güvenilir haber kaynaklarından derlenen içerikleri Türkçe olarak daha anlaşılır, sade ve düzenli biçimde sunmayı amaçlayan bir yayın girişimidir.
 
-\### Gökhan Karaman | OSINT \& Stratejik Analiz
+Yayınlanan içerikler; uluslararası haber kaynakları ve yerel haber kaynakları, açık kaynak veriler ve kamusal haber akışları temel alınarak özetlenir, yeniden düzenlenir veya Türkçeye uyarlanır.
 
+Amacımız, okura hızlı, sade ve takip edilebilir bir haber deneyimi sunmaktır.
 
+## Editoryal Not
 
-Dijital dünyadaki açık kaynak verilerini anlamlı istihbarata dönüştüren bağımsız bir araştırmacıyım. Özellikle Orta Doğu ve Doğu Akdeniz hattındaki jeopolitik gelişmeleri, taktiksel haritalama ve veri madenciliği yöntemleriyle analiz ediyorum.
+Sitemizde yer alan haberler, farklı uluslararası ve yerel kaynaklardan derlenerek yayımlanmaktadır.  
+Haberlerin olgusal doğruluğu, iddiaları ve ilk beyanları ilgili kaynak kuruluşlara aittir.
 
+Haber-G, içerikleri Türkçeye uyarlayan ve editoryal olarak düzenleyen bir yayındır; birincil kaynak değildir.
 
+## İletişim
 
-\*\*Uzmanlık Alanlarım:\*\*
+İletişim ve önerileriniz için yakında bu sayfada ek bilgiler paylaşılacaktır.
 
-\* \*\*Taktiksel Haritalama:\*\* Çatışma bölgelerinin CBS tabanlı görselleştirilmesi.
-
-\* \*\*OSINT Araştırmaları:\*\* Sosyal medya ve uydu görüntüleri üzerinden saha doğrulaması.
-
-\* \*\*Jeopolitik Risk Analizi:\*\* Bölgesel krizlerin güvenlik politikalarına etkileri.
+#HaberG #News-G #gokhankaraman.com.tr #info@gokhankaraman.com.tr
 
 
 

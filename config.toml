@@ -1,8 +1,9 @@
 baseURL = "https://gokhankaraman.com.tr/"
 languageCode = "tr-TR"
-title = "gokhankaraman.com.tr"
+title = "Haber-G | Dünya ve Gündem"
 theme = "hugo-news"
 timeZone = "Europe/Istanbul"
+buildFuture = true
 
 [build]
   writeStats = true
@@ -14,3 +15,18 @@ timeZone = "Europe/Istanbul"
 
 [params]
   mainSections = ["articles"]
+
+[[menu.main]]
+name = "Kategoriler"
+url = "/categories/"
+weight = 1
+
+[[menu.main]]
+name = "Arama"
+url = "/search/"
+weight = 2
+
+[[menu.main]]
+name = "Hakkımızda"
+url = "/hakkimda/"
+weight = 3

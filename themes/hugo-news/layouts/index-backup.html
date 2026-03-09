@@ -1,0 +1,89 @@
+{{ define "main" }}
+
+{{ $articles := where .Site.RegularPages "Type" "articles" }}
+
+<div class="max-w-7xl mx-auto">
+
+    {{ if gt (len $articles) 0 }}
+    {{ $featured := index $articles 0 }}
+    {{ $featuredImage := or $featured.Params.featured_image $featured.Params.image }}
+
+    <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
+        <div class="md:flex">
+            {{ with $featuredImage }}
+            <div class="md:w-2/3">
+                <a href="{{ $featured.RelPermalink }}">
+                    <img src="{{ . }}" alt="{{ $featured.Title }}" class="w-full h-[420px] object-cover">
+                </a>
+            </div>
+            {{ end }}
+
+            <div class="p-8 {{ if $featuredImage }}md:w-1/3{{ else }}w-full{{ end }}">
+                {{ with $featured.Params.categories }}
+                <div class="mb-3">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                        {{ index . 0 }}
+                    </span>
+                </div>
+                {{ end }}
+
+                <h1 class="text-4xl font-bold mb-4">
+                    <a href="{{ $featured.RelPermalink }}" class="hover:text-blue-600">
+                        {{ $featured.Title }}
+                    </a>
+                </h1>
+
+                <p class="text-gray-700 text-lg">
+                    {{ $featured.Description | default ($featured.Summary | truncate 220) }}
+                </p>
+            </div>
+        </div>
+    </article>
+    {{ end }}
+
+    <h2 class="text-2xl font-bold mb-6">Son Haberler</h2>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {{ range first 6 (after 1 $articles) }}
+        {{ $article := . }}
+        {{ $img := or $article.Params.featured_image $article.Params.image }}
+
+        <article class="bg-white rounded-lg shadow overflow-hidden">
+            {{ with $img }}
+            <a href="{{ $article.RelPermalink }}">
+                <img src="{{ . }}" alt="{{ $article.Title }}" class="w-full h-44 object-cover">
+            </a>
+            {{ end }}
+
+            <div class="p-4">
+                {{ with $article.Params.categories }}
+                <div class="mb-2">
+                    <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                        {{ index . 0 }}
+                    </span>
+                </div>
+                {{ end }}
+
+                <h3 class="font-bold text-lg">
+                    <a href="{{ $article.RelPermalink }}" class="hover:text-blue-600">
+                        {{ $article.Title }}
+                    </a>
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2">
+                    {{ $article.Description | default ($article.Summary | truncate 120) }}
+                </p>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+
+    <div class="text-center">
+        <a href="/articles" class="inline-block bg-gray-800 text-white px-8 py-3 rounded-md hover:bg-gray-700">
+            Daha Fazla Haber
+        </a>
+    </div>
+
+</div>
+
+{{ end }}
