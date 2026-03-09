@@ -4,10 +4,11 @@
     {{ $articles := where .Site.RegularPages "Type" "articles" }}
     {{ if gt (len $articles) 0 }}
     {{ $featured := index $articles 0 }}
+    {{ $featuredImage := or $featured.Params.featured_image $featured.Params.image }}
 
     <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
         <div class="md:flex">
-            {{ with $featured.Params.featured_image }}
+            {{ with $featuredImage }}
             <div class="md:w-2/3">
                 <a href="{{ $featured.RelPermalink }}">
                     <img src="{{ . }}" alt="{{ $featured.Title }}" class="w-full h-96 object-cover">
@@ -15,7 +16,7 @@
             </div>
             {{ end }}
 
-            <div class="p-8 {{ if $featured.Params.featured_image }}md:w-1/3{{ else }}w-full{{ end }}">
+            <div class="p-8 {{ if $featuredImage }}md:w-1/3{{ else }}w-full{{ end }}">
                 <div class="flex flex-wrap gap-2 mb-4">
                     {{ with $featured.Params.categories }}
                         {{ range first 1 . }}
@@ -47,8 +48,10 @@
         <div class="grid gap-8 md:grid-cols-3">
             {{ range first 6 (after 1 $articles) }}
             {{ $article := . }}
+            {{ $articleImage := or $article.Params.featured_image $article.Params.image }}
+
             <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                {{ with $article.Params.featured_image }}
+                {{ with $articleImage }}
                 <a href="{{ $article.RelPermalink }}">
                     <img src="{{ . }}" alt="{{ $article.Title }}" class="w-full h-48 object-cover">
                 </a>

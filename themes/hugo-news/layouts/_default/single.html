@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ $singleImage := or .Params.featured_image .Params.image }}
+
 <article class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
     <div class="p-6 md:p-8">
 
@@ -41,7 +43,7 @@
         </div>
         {{ end }}
 
-        {{ with .Params.featured_image }}
+        {{ with $singleImage }}
         <div class="mb-8">
             <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto max-h-[520px] object-cover rounded-lg">
         </div>
