@@ -1,12 +1,16 @@
 baseURL = "https://gokhankaraman.com.tr/"
-languageCode = 'en-US'
-title = 'Hugo News Theme Example'
+languageCode = "tr-TR"
+title = "Gökhan Karaman Haber"
 
 theme = "hugo-news"
+
+[build]
+  writeStats = true
 
 [taxonomies]
   author = "authors"
   category = "categories"
-  tag = "tags" 
+  tag = "tags"
+
 [params]
-mainSections = ["posts"]
+  mainSections = ["articles"]
