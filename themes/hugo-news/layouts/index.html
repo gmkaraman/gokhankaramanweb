@@ -46,7 +46,7 @@
     <div class="mb-12">
         <h2 class="text-3xl font-bold mb-8">Son Haberler</h2>
         <div class="grid gap-8 md:grid-cols-3">
-            {{ range first 6 (after 1 $articles) }}
+            {{ range first 12 (after 1 $articles) }}
             {{ $article := . }}
             {{ $articleImage := or $article.Params.featured_image $article.Params.image }}
 

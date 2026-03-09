@@ -1,8 +1,8 @@
 baseURL = "https://gokhankaraman.com.tr/"
 languageCode = "tr-TR"
-title = "Gökhan Karaman Haber"
-
+title = "gokhankaraman.com.tr"
 theme = "hugo-news"
+timeZone = "Europe/Istanbul"
 
 [build]
   writeStats = true
