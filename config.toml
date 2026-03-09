@@ -1,0 +1,12 @@
+baseURL = "https://gokhankaraman.com.tr/"
+languageCode = 'en-US'
+title = 'Hugo News Theme Example'
+
+theme = "hugo-news"
+
+[taxonomies]
+  author = "authors"
+  category = "categories"
+  tag = "tags" 
+[params]
+mainSections = ["posts"]
