@@ -1,0 +1,46 @@
+<div style="background:red;color:white;padding:10px;font-size:20px;">
+HEADER TEST
+</div>
+<header class="bg-white border-b border-gray-200">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+
+<div class="flex items-center justify-between py-4">
+
+<a href="/" class="text-xl md:text-2xl font-bold text-gray-900">
+Haber-G
+</a>
+
+<button id="menuToggle" class="md:hidden text-gray-700 text-2xl">
+☰
+</button>
+
+<nav id="menuDesktop" class="hidden md:flex items-center gap-6 text-sm">
+<a href="/categories/" class="hover:text-blue-600">Kategoriler</a>
+<a href="/arama/" class="hover:text-blue-600">Arama</a>
+<a href="/about/" class="hover:text-blue-600">Hakkımızda</a>
+<a href="/search/" class="hover:text-blue-600">Search</a>
+</nav>
+
+</div>
+
+<nav id="menuMobile" class="hidden flex-col gap-3 pb-4 md:hidden text-sm">
+<a href="/categories/" class="hover:text-blue-600">Kategoriler</a>
+<a href="/arama/" class="hover:text-blue-600">Arama</a>
+<a href="/about/" class="hover:text-blue-600">Hakkımızda</a>
+<a href="/search/" class="hover:text-blue-600">Search</a>
+</nav>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const btn = document.getElementById("menuToggle");
+const menu = document.getElementById("menuMobile");
+
+btn.addEventListener("click", function() {
+menu.classList.toggle("hidden");
+});
+});
+</script>
+
+</header>

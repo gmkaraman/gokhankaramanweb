@@ -1,36 +1,42 @@
-<header class="site-header">
-    <div class="header-content">
-        <h1 class="site-title">{{ site.Title }}</h1>
-        <div class="header-right">
-            {{ partial "search-box.html" . }}
-            {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-        </div>
-    </div>
+<header class="bg-white border-b border-gray-200">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+
+<div class="flex items-center justify-between py-4">
+
+<a href="/" class="text-xl md:text-2xl font-bold text-gray-900">
+Haber-G
+</a>
+
+<button id="menuToggle" class="md:hidden text-2xl">
+☰
+</button>
+
+<nav class="hidden md:flex gap-6 text-sm">
+<a href="/categories/">Kategoriler</a>
+<a href="/arama/">Arama</a>
+<a href="/about/">Hakkımızda</a>
+<a href="/search/">Search</a>
+</nav>
+
+</div>
+
+<nav id="menuMobile" class="hidden flex-col gap-3 pb-4 md:hidden text-sm">
+<a href="/categories/">Kategoriler</a>
+<a href="/arama/">Arama</a>
+<a href="/about/">Hakkımızda</a>
+<a href="/search/">Search</a>
+</nav>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const btn = document.getElementById("menuToggle");
+const menu = document.getElementById("menuMobile");
+btn.addEventListener("click", function() {
+menu.classList.toggle("hidden");
+});
+});
+</script>
+
 </header>
-
-<style>
-.site-header {
-    padding: 1rem;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.site-title {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-</style>

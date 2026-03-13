@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Tags | Haber-G</title>
-
-      <link rel="stylesheet" href="/css/main.min.45002d43033314117e0d15e26f29aaf18ab569e1f161ca293846d80f4f0a890b.css" integrity="sha256-RQAtQwMzFBF&#43;DRXibymq8Yq1aeHxYcopOEbYD08KiQs=" crossorigin="anonymous">
-
-
-      <script src="/js/main.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js" integrity="sha256-8peak6Ml/s&#43;WBSY70UE5ijEcjiM4jtfc/3T5L35jKGY=" crossorigin="anonymous"></script>
-
-
+  {{ partial "head.html" . }}
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -35,18 +26,7 @@
   </header>
 
   <main class="py-6">
-    
-<div class="max-w-4xl mx-auto">
-    <header class="mb-8">
-        <h1 class="text-4xl font-bold">Tags</h1>
-        
-    </header>
-
-    <div class="grid gap-4 md:grid-cols-3">
-        
-    </div>
-</div>
-
+    {{ block "main" . }}{{ end }}
   </main>
 
 </body>

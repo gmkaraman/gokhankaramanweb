@@ -1,0 +1,13 @@
+<nav class="w-full md:w-auto">
+  {{ if .Site.Menus.main }}
+  <ul class="flex flex-wrap gap-3 text-sm md:text-base">
+    {{ range .Site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}" class="block px-2 py-1 hover:text-blue-600">
+        {{ .Name }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</nav>
