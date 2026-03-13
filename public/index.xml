@@ -1,26 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Home on Haber-G</title>
-    <link>https://gokhankaraman.com.tr/</link>
-    <description>Recent content in Home on Haber-G</description>
-    <generator>Hugo</generator>
-    <language>tr-TR</language>
-    <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://gokhankaraman.com.tr/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hakkımızda</title>
-      <link>https://gokhankaraman.com.tr/hakkimda/</link>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0300</pubDate>
-      <guid>https://gokhankaraman.com.tr/hakkimda/</guid>
-      <description>&lt;h1&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Haber-G, dünya genelindeki güvenilir haber kaynaklarından derlenen içerikleri Türkçe olarak daha anlaşılır, sade ve düzenli biçimde sunmayı amaçlayan bir yayın girişimidir.&lt;/p&gt;&#xA;&lt;p&gt;Yayınlanan içerikler; uluslararası haber kaynakları ve yerel haber kaynakları, açık kaynak veriler ve kamusal haber akışları temel alınarak özetlenir, yeniden düzenlenir veya Türkçeye uyarlanır.&lt;/p&gt;&#xA;&lt;p&gt;Amacımız, okura hızlı, sade ve takip edilebilir bir haber deneyimi sunmaktır.&lt;/p&gt;&#xA;&lt;h2 id=&#34;editoryal-not&#34;&gt;Editoryal Not&lt;/h2&gt;&#xA;&lt;p&gt;Sitemizde yer alan haberler, farklı uluslararası ve yerel kaynaklardan derlenerek yayımlanmaktadır.&lt;br&gt;&#xA;Haberlerin olgusal doğruluğu, iddiaları ve ilk beyanları ilgili kaynak kuruluşlara aittir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Arama</title>
-      <link>https://gokhankaraman.com.tr/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gokhankaraman.com.tr/search/</guid>
-      <description></description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Haber-G</title><link>https://gokhankaraman.com.tr/</link><description>Recent content in Home on Haber-G</description><generator>Hugo</generator><language>tr-TR</language><lastBuildDate>Fri, 13 Mar 2026 07:42:51 +0300</lastBuildDate><atom:link href="https://gokhankaraman.com.tr/index.xml" rel="self" type="application/rss+xml"/><item><title>İran'ın Stratejik Savunma Önlemleri</title><link>https://gokhankaraman.com.tr/articles/haber-20260313-074251/</link><pubDate>Fri, 13 Mar 2026 07:42:51 +0300</pubDate><guid>https://gokhankaraman.com.tr/articles/haber-20260313-074251/</guid><description>&lt;p&gt;28 Şubat süreciyle tetiklenen bölgesel gerilimler ve oluşan savaş atmosferi, mevcut güvenlik risklerini kritik bir seviyeye taşımıştır. Bu durum, bölgedeki dengelerin bozulması adına ciddi bir baskı oluşturmaktadır.&lt;/p&gt;
+&lt;p&gt;İran ise bu risklerin hayata geçmesini engellemek adına önleyici bir yaklaşım benimsemiştir. Tahran yönetimi, krizin eş zamanlı bir çatışmaya dönüşmesini önlemek için gerekli stratejik tedbirleri önceden alarak savunma kapasitesini güvence altına almıştır.&lt;/p&gt;</description></item><item><title>Hakkımızda</title><link>https://gokhankaraman.com.tr/hakkimda/</link><pubDate>Mon, 09 Mar 2026 00:00:00 +0300</pubDate><guid>https://gokhankaraman.com.tr/hakkimda/</guid><description>&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;Haber-G, dünya genelindeki güvenilir haber kaynaklarından derlenen içerikleri Türkçe olarak daha anlaşılır, sade ve düzenli biçimde sunmayı amaçlayan bir yayın girişimidir.&lt;/p&gt;
+&lt;p&gt;Yayınlanan içerikler; uluslararası haber kaynakları ve yerel haber kaynakları, açık kaynak veriler ve kamusal haber akışları temel alınarak özetlenir, yeniden düzenlenir veya Türkçeye uyarlanır.&lt;/p&gt;
+&lt;p&gt;Amacımız, okura hızlı, sade ve takip edilebilir bir haber deneyimi sunmaktır.&lt;/p&gt;
+&lt;h2 id="editoryal-not"&gt;Editoryal Not&lt;/h2&gt;
+&lt;p&gt;Sitemizde yer alan haberler, farklı uluslararası ve yerel kaynaklardan derlenerek yayımlanmaktadır.&lt;br&gt;
+Haberlerin olgusal doğruluğu, iddiaları ve ilk beyanları ilgili kaynak kuruluşlara aittir.&lt;/p&gt;</description></item><item><title>Arama</title><link>https://gokhankaraman.com.tr/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gokhankaraman.com.tr/search/</guid><description/></item></channel></rss>
