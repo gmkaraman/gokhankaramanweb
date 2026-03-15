@@ -4,6 +4,7 @@ title = "Haber-G"
 theme = "hugo-news"
 timeZone = "Europe/Istanbul"
 buildFuture = true
+enableRobotsTXT = true
 
 [build]
   writeStats = true
@@ -16,6 +17,51 @@ buildFuture = true
 [params]
   mainSections = ["articles"]
   description = "Dünya, gündem, teknoloji ve yerel gelişmeleri tek yerde takip edin."
+  instagramURL = "https://instagram.com/gokhankaraman"
+  xURL = "https://x.com/gokhankaraman"
+  youtubeURL = "https://youtube.com/@gokhankaraman"
+
+  [params.analytics]
+    # GA4 Measurement ID (example: G-ABC123XYZ9)
+    ga4MeasurementID = "G-1M5ML9T2CE"
+    # Search Console HTML verification content value
+    googleSiteVerification = "h5onwnNCdXDobZ1rteJ3BiwF0HhJPNBJUKO1sY0FHIA"
+
+[[params.marketTicker]]
+  name = "BIST 100"
+  value = "9.842,15"
+  change = "+1,24%"
+  direction = "up"
+
+[[params.marketTicker]]
+  name = "DOLAR/TL"
+  value = "37,1052"
+  change = "+0,18%"
+  direction = "up"
+
+[[params.marketTicker]]
+  name = "EURO/TL"
+  value = "40,3168"
+  change = "-0,09%"
+  direction = "down"
+
+[[params.marketTicker]]
+  name = "GRAM ALTIN"
+  value = "3.482"
+  change = "+0,62%"
+  direction = "up"
+
+[[params.marketTicker]]
+  name = "BRENT"
+  value = "84,62$"
+  change = "-0,33%"
+  direction = "down"
+
+[[params.marketTicker]]
+  name = "BTC"
+  value = "83.420$"
+  change = "+2,11%"
+  direction = "up"
 
 [[menu.main]]
   name = "Kategoriler"

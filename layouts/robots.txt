@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://gokhankaraman.com.tr/sitemap.xml
+Sitemap: {{ "sitemap.xml" | absURL }}
 
 # Prevent low-value index pages
 Disallow: /search/
